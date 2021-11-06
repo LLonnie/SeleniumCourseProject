@@ -13,14 +13,15 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class WebDriverSetup {
+public class TestBase {
 
 	public WebDriver driver;
+	public Properties properties;
 
-	public WebDriver InitializeDriver() throws IOException {
+	public WebDriver initializeDriver() throws IOException {
 
 		// Pull browser from properties file.
-		Properties properties = new Properties();
+		properties = new Properties();
 		FileInputStream fileInputStream = new FileInputStream("src/main/resources/test.properties");
 		properties.load(fileInputStream);
 		String browserName = properties.getProperty("browser").toLowerCase();
