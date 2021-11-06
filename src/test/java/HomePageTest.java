@@ -2,6 +2,8 @@ import Academy.TestBase;
 import Academy.pageObjects.LandingPage;
 import Academy.pageObjects.LoginPage;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -9,10 +11,19 @@ import java.io.IOException;
 
 public class HomePageTest extends TestBase {
 
-	@Test(dataProvider = "users")
-	public void userLogin(String username, String password) throws IOException {
-
+	@BeforeTest
+	public void testSetup() throws IOException {
 		driver = initializeDriver();
+	}
+
+	@AfterTest
+	public void testCleanup() {
+		driver.close();
+	}
+
+	@Test(dataProvider = "users")
+	public void userLogin(String username, String password) {
+
 		LandingPage landingPage = new LandingPage(driver);
 		LoginPage loginPage = new LoginPage(driver);
 
@@ -21,31 +32,24 @@ public class HomePageTest extends TestBase {
 		loginPage.getEmailInput().sendKeys(username);
 		loginPage.getPasswordInput().sendKeys(password);
 		loginPage.getLoginButton().click();
-
-		driver.close();
 	}
 
 	@Test
-	public void featuredCoursesHeader() throws IOException {
+	public void featuredCoursesHeader() {
 
-		driver = initializeDriver();
 		LandingPage landingPage = new LandingPage(driver);
 
 		driver.get(properties.getProperty("url"));
 		Assert.assertEquals(landingPage.getFeaturedCoursesHeader().getText(), "Featured Courses");
-
-		driver.close();
 	}
 
 	@Test
-	public void isNavigationHeaderVisible() throws IOException {
+	public void isNavigationHeaderVisible() {
 
-		driver = initializeDriver();
 		LandingPage landingPage = new LandingPage(driver);
 
 		driver.get(properties.getProperty("url"));
 		Assert.assertTrue(landingPage.getNavigationList().isDisplayed());
-		driver.close();
 	}
 
 	@DataProvider
