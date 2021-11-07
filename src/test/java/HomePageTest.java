@@ -14,6 +14,9 @@ public class HomePageTest extends TestBase {
 	public WebDriver driver;
 	private static final Logger log = LogManager.getLogger(HomePageTest.class.getName());
 
+	LandingPage landingPage;
+	LoginPage loginPage;
+
 	@BeforeClass
 	public void testSetup() throws IOException {
 		log.info("Initializing the driver before any tests.");
@@ -29,13 +32,13 @@ public class HomePageTest extends TestBase {
 	@Test(dataProvider = "users")
 	public void userLogin(String username, String password) {
 
-		LandingPage landingPage = new LandingPage(driver);
+		landingPage = new LandingPage(driver);
 
 		log.info("Navigating to the url in the test.properties file.");
 		driver.get(properties.getProperty("url"));
 
 		log.info("Clicking the login link on the landing page.");
-		LoginPage loginPage = landingPage.getLoginLink();
+		loginPage = landingPage.getLoginLink();
 
 		log.info("Entering the username and password and attempting login.");
 		loginPage.getEmailInput().sendKeys(username);
@@ -46,7 +49,7 @@ public class HomePageTest extends TestBase {
 	@Test
 	public void featuredCoursesHeader() {
 
-		LandingPage landingPage = new LandingPage(driver);
+		landingPage = new LandingPage(driver);
 
 		log.info("Navigating to the url in the test.properties file.");
 		driver.get(properties.getProperty("url"));
@@ -57,7 +60,7 @@ public class HomePageTest extends TestBase {
 	@Test
 	public void isNavigationHeaderVisible() {
 
-		LandingPage landingPage = new LandingPage(driver);
+		landingPage = new LandingPage(driver);
 
 		log.info("Navigating to the url in the test.properties file.");
 		driver.get(properties.getProperty("url"));

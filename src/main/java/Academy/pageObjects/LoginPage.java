@@ -36,15 +36,15 @@ public class LoginPage {
 
 
 	// Web Elements
-	@FindBy(id = "email")
+	private @FindBy(id = "email")
 		WebElement emailInput;
 
-	@FindBy(id = "password")
+	private @FindBy(id = "password")
 		WebElement passwordInput;
 
-	@FindBy(xpath = "//input[@data-testid='login-button']")
+	private @FindBy(xpath = "//input[@data-testid='login-button']")
 		WebElement loginButton;
 
-	@FindBy(className = "auth-flash-error")
+	private @FindBy(className = "auth-flash-error")
 		WebElement loginError;
 }

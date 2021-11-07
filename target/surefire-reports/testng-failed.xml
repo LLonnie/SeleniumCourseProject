@@ -9,7 +9,7 @@
       <class name="HomePageTest">
         <methods>
           <include name="testCleanup"/>
-          <include name="featuredCoursesHeader"/>
+          <include name="userLogin" invocation-numbers="0 1"/>
           <include name="testSetup"/>
         </methods>
       </class> <!-- HomePageTest -->

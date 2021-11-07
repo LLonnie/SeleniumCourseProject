@@ -40,15 +40,15 @@ public class LandingPage {
 
 
 	// Web Elements
-	@FindBy(xpath = "//a[contains(@href, 'sign_in')]")
+	private @FindBy(xpath = "//a[contains(@href, 'sign_in')]")
 		WebElement loginLink;
 
-	@FindBy(xpath = "//section[@class='courses-section'] //h2")
+	private @FindBy(xpath = "//section[@class='courses-section'] //h2")
 		WebElement featuredCoursesHeader;
 
-	@FindBy(xpath = "//div[@class='header-upper'] //ul[contains(@class, 'navigation')]")
+	private @FindBy(xpath = "//div[@class='header-upper'] //ul[contains(@class, 'navigation')]")
 		WebElement navigationList;
 
-	@FindBy(xpath = "//div[@class='header-upper'] //ul/li/a")
+	private @FindBy(xpath = "//div[@class='header-upper'] //ul/li/a")
 		List<WebElement> navigationLinks;
 }

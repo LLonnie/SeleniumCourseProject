@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -19,6 +20,9 @@ import java.util.Properties;
 
 public class TestBase {
 
+	// driver can be static if running in sequential mode.
+	// If running in parallel you would not want it static, as variables could overwrite each other.
+	// Unless you are declaring a driver variable in each test file like we are in this project.
 	public WebDriver driver;
 	public Properties properties;
 
@@ -26,15 +30,30 @@ public class TestBase {
 
 		// Pull browser from properties file.
 		properties = new Properties();
+
+		//System.getProperty("user.dir") -- This gives the current project path.
+		//FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\test.properties");
 		FileInputStream fileInputStream = new FileInputStream("src/main/resources/test.properties");
 		properties.load(fileInputStream);
-		String browserName = properties.getProperty("browser").toLowerCase();
+
+		// Paramaterize jenkins build with maven command.
+		// mvn test -Dbrowser=chrome
+		String browserName = System.getProperty("browser");
+		// Get browser name from properties file.
+		// String browserName = properties.getProperty("browser").toLowerCase();
 
 		// Set driver to the browser from the test.properties file.
 		switch (browserName) {
 			case "chrome":
 				WebDriverManager.chromedriver().driverVersion("95.0.4638").setup();
 				driver = new ChromeDriver();
+				break;
+
+			case "chromeHeadless":
+				WebDriverManager.chromedriver().driverVersion("95.0.4638").setup();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("headless");
+				driver = new ChromeDriver(chromeOptions);
 				break;
 
 			case "firefox":
@@ -70,7 +89,8 @@ public class TestBase {
 
 	public String getScreenShotPath(WebDriver driver, String testCaseName) throws IOException {
 		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String screenshotDestination = System.getProperty("user.dir") + "\\reports\\screenshots\\" + testCaseName + ".png";
+		//String screenshotDestination = System.getProperty("user.dir") + "\\reports\\screenshots\\" + testCaseName + ".png";
+		String screenshotDestination = "src\\reports\\screenshots\\" + testCaseName + ".png";
 		FileUtils.copyFile(image, new File(screenshotDestination));
 		return screenshotDestination;
 	}

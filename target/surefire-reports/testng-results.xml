@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-06T19:20:20 MDT" name="Suite" finished-at="2021-11-06T19:20:36 MDT" duration-ms="16041">
+  <suite started-at="2021-11-07T08:52:45 MST" name="Suite" finished-at="2021-11-07T08:53:00 MST" duration-ms="14739">
     <groups>
     </groups>
-    <test started-at="2021-11-06T19:20:20 MDT" name="Test" finished-at="2021-11-06T19:20:36 MDT" duration-ms="16041">
+    <test started-at="2021-11-07T08:52:45 MST" name="Test" finished-at="2021-11-07T08:53:00 MST" duration-ms="14739">
       <class name="HomePageTest">
-        <test-method is-config="true" signature="testSetup()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-06T19:20:20 MDT" name="testSetup" finished-at="2021-11-06T19:20:22 MDT" duration-ms="2129" status="PASS">
+        <test-method is-config="true" signature="testSetup()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-07T08:52:45 MST" name="testSetup" finished-at="2021-11-07T08:52:47 MST" duration-ms="2032" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetup -->
-        <test-method signature="featuredCoursesHeader()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-06T19:20:22 MDT" name="featuredCoursesHeader" finished-at="2021-11-06T19:20:27 MDT" duration-ms="5266" status="PASS">
+        <test-method signature="featuredCoursesHeader()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-07T08:52:47 MST" name="featuredCoursesHeader" finished-at="2021-11-07T08:52:52 MST" duration-ms="4826" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- featuredCoursesHeader -->
-        <test-method signature="isNavigationHeaderVisible()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-06T19:20:27 MDT" name="isNavigationHeaderVisible" finished-at="2021-11-06T19:20:29 MDT" duration-ms="1853" status="PASS">
+        <test-method signature="isNavigationHeaderVisible()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-07T08:52:52 MST" name="isNavigationHeaderVisible" finished-at="2021-11-07T08:52:54 MST" duration-ms="2235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isNavigationHeaderVisible -->
-        <test-method signature="userLogin(java.lang.String,java.lang.String)[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-06T19:20:29 MDT" name="userLogin" data-provider="users" finished-at="2021-11-06T19:20:33 MDT" duration-ms="3627" status="PASS">
+        <test-method signature="userLogin(java.lang.String,java.lang.String)[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-07T08:52:54 MST" name="userLogin" data-provider="users" finished-at="2021-11-07T08:52:57 MST" duration-ms="2732" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,7 +35,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogin -->
-        <test-method signature="userLogin(java.lang.String,java.lang.String)[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-06T19:20:33 MDT" name="userLogin" data-provider="users" finished-at="2021-11-06T19:20:36 MDT" duration-ms="3098" status="PASS">
+        <test-method signature="userLogin(java.lang.String,java.lang.String)[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-07T08:52:57 MST" name="userLogin" data-provider="users" finished-at="2021-11-07T08:52:59 MST" duration-ms="2807" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -51,7 +51,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogin -->
-        <test-method is-config="true" signature="testCleanup()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-06T19:20:36 MDT" name="testCleanup" finished-at="2021-11-06T19:20:36 MDT" duration-ms="40" status="PASS">
+        <test-method is-config="true" signature="testCleanup()[pri:0, instance:HomePageTest@443dbe42]" started-at="2021-11-07T08:52:59 MST" name="testCleanup" finished-at="2021-11-07T08:53:00 MST" duration-ms="80" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCleanup -->
