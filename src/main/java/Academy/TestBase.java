@@ -1,6 +1,9 @@
 package Academy;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -62,5 +66,12 @@ public class TestBase {
 
 		// Return the created driver object.
 		return driver;
+	}
+
+	public String getScreenShotPath(WebDriver driver, String testCaseName) throws IOException {
+		File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String screenshotDestination = System.getProperty("user.dir") + "\\reports\\screenshots\\" + testCaseName + ".png";
+		FileUtils.copyFile(image, new File(screenshotDestination));
+		return screenshotDestination;
 	}
 }

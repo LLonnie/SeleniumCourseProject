@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="Academy.Listeners"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Test(failed)" verbose="0">
+    <classes>
+      <class name="HomePageTest">
+        <methods>
+          <include name="testCleanup"/>
+          <include name="featuredCoursesHeader"/>
+          <include name="testSetup"/>
+        </methods>
+      </class> <!-- HomePageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

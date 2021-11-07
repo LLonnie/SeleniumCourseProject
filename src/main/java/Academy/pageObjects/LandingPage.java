@@ -20,8 +20,9 @@ public class LandingPage {
 
 
 	// Methods
-	public WebElement getLoginLink() {
-		return loginLink;
+	public LoginPage getLoginLink() {
+		loginLink.click();
+		return new LoginPage(driver);
 	}
 
 	public WebElement getFeaturedCoursesHeader() {
