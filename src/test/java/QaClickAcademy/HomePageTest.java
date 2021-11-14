@@ -1,3 +1,5 @@
+package QaClickAcademy;
+
 import Academy.TestBase;
 import Academy.pageObjects.LandingPage;
 import Academy.pageObjects.LoginPage;

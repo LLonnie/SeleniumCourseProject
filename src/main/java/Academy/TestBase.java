@@ -38,9 +38,9 @@ public class TestBase {
 
 		// Paramaterize jenkins build with maven command.
 		// mvn test -Dbrowser=chrome
-		String browserName = System.getProperty("browser");
+//		String browserName = System.getProperty("browser");
 		// Get browser name from properties file.
-		// String browserName = properties.getProperty("browser").toLowerCase();
+		 String browserName = properties.getProperty("browser").toLowerCase();
 
 		// Set driver to the browser from the test.properties file.
 		switch (browserName) {

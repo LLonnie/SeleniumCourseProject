@@ -6,7 +6,7 @@
     </listeners>
     <test name="Test">
         <classes>
-            <class name="HomePageTest"/>
+            <class name="QaClickAcademy.HomePageTest"/>
         </classes>
     </test>
 </suite>
