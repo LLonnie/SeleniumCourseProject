@@ -64,4 +64,10 @@ public class stepDefinition extends TestBase {
 		portalHomePage = new PortalHomePage(driver);
 		Assert.assertTrue(portalHomePage.getCourseSearchInput().isDisplayed());
 	}
+
+	@Then("Close browser")
+	public void close_browser() {
+		log.info("Closing the window at the end of testing.");
+		driver.close();
+	}
 }
